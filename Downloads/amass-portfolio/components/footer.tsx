@@ -52,7 +52,7 @@ export default function Footer() {
                 },
                 {
                   icon: <Instagram className="h-4 w-4" />,
-                  href: "#",
+                  href: "https://www.instagram.com/amasstechhub/",
                   label: "Instagram",
                   hoverColor: "hover:text-pink-500",
                 },
@@ -113,8 +113,8 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">My Brands</h4>
             <ul className="space-y-2">
               {[
-                { name: "AmassTechHub", href: "#", color: "text-blue-400 hover:text-blue-300" },
-                { name: "Amass Multimedia", href: "#", color: "text-orange-400 hover:text-orange-300" },
+                { name: "AmassTechHub", href: "https://www.amasstechhub.com", color: "text-blue-400 hover:text-blue-300" },
+                { name: "Amass Multimedia", href: "https://www.amasstechhub.com", color: "text-orange-400 hover:text-orange-300" },
                 {
                   name: "GitHub Projects",
                   href: "https://github.com/Am-amass",

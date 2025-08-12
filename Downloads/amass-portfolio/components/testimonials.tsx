@@ -41,7 +41,7 @@ export default function Testimonials() {
       role: "Startup Founder",
       content:
         "Theophilus built our entire web platform from scratch. His technical expertise and attention to detail exceeded our expectations. He's not just a developer but a true problem solver.",
-      image: "/sarah-johnson.jpg",
+      image: "/testimonial-sarah.jpg",
       type: "tech",
     },
     {
@@ -49,7 +49,7 @@ export default function Testimonials() {
       role: "Marketing Director",
       content:
         "The video production quality from Amass Multimedia was exceptional. Theophilus has a unique eye for storytelling that helped our brand message resonate with our audience.",
-      image: "/michael-chen.jpg",
+      image: "/testimonial-michael.jpg",
       type: "media",
     },
     {
@@ -57,7 +57,7 @@ export default function Testimonials() {
       role: "Event Coordinator",
       content:
         "Working with Theophilus for our event coverage was seamless. He captured moments we didn't even know were happening. The final edit brought tears to our eyes.",
-      image: "/ama-serwaa.jpg",
+      image: "/testimonial-ama.jpg",
       type: "media",
     },
     {
@@ -65,7 +65,7 @@ export default function Testimonials() {
       role: "Tech Entrepreneur",
       content:
         "The mentorship I received from Theophilus through AmassTechHub transformed my approach to software development. His guidance was practical and immediately applicable.",
-      image: "/david-osei.jpg",
+      image: "/testimonial-david.jpg",
       type: "tech",
     },
   ]

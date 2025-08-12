@@ -42,21 +42,21 @@ export default function Portfolio() {
       description: "A decentralized marketplace connecting creators with businesses for collaboration opportunities.",
       image: "/createconnect.jpg",
       tags: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
-      link: "#",
+      link: "https://github.com/AmassTechHub/CreateConnect",
     },
     {
       title: "The Startup Genesis Podcast",
       description: "A podcast series featuring interviews with tech entrepreneurs and startup insights.",
       image: "/StartupGenesis.jpg",
       tags: ["Content Creation", "Audio Production", "Digital Marketing"],
-      link: "#",
+      link: "https://www.youtube.com/@AmassTechHub",
     },
     {
       title: "PENSA KNUST Web Platform",
       description: "Digital platform for a university Christian fellowship's web and app needs.",
       image: "/pensaknust.JPG",
       tags: ["React", "Firebase", "Content Management", "Authentication"],
-      link: "#",
+      link: "https://github.com/AmassTechHub",
     },
   ]
 
@@ -66,21 +66,21 @@ export default function Portfolio() {
       description: "Visual storytelling for a local business rebrand campaign.",
       image: "/brandcampaign.jpeg",
       tags: ["Videography", "Editing", "Color Grading"],
-      link: "#",
+      link: "https://www.amasstechhub.com",
     },
     {
       title: "Product Photography",
       description: "High-quality product photography for an e-commerce store.",
       image: "/productphotography.jpeg",
       tags: ["Photography", "Lighting", "Post-processing"],
-      link: "#",
+      link: "https://www.amasstechhub.com",
     },
     {
       title: "Event Coverage",
       description: "Comprehensive video and photo coverage for corporate events.",
       image: "/event coverage.jpeg",
       tags: ["Event", "Multi-camera", "Same-day Edits"],
-      link: "#",
+      link: "https://www.amasstechhub.com",
     },
   ]
 

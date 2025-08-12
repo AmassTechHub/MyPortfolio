@@ -6,13 +6,15 @@ import { useEffect, useState, useRef } from "react"
 import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Github, Youtube, Linkedin, Instagram, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Github, Youtube, Linkedin, Instagram, Send, CheckCircle, AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import MagneticButton from "./magnetic-button"
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,14 +53,40 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic would go here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
-    // Show success message
-    alert("Thank you for your message! I'll get back to you soon.")
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      // EmailJS implementation
+      const emailjs = await import("@emailjs/browser")
+      
+      const result = await emailjs.send(
+        "service_gcqsm4o", // Your EmailJS service ID
+        "template_aqs650g", // Your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "amankwaahtheophilus@gmail.com", // Your email address
+        },
+        "mLCG_9iQMIxc5FLKF" // Your EmailJS public key
+      )
+
+      if (result.status === 200) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Email sending failed:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const socialLinks = [
@@ -242,10 +270,34 @@ export default function Contact() {
                 </motion.div>
                 <MagneticButton
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white py-3 rounded-md"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white py-3 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message <Send className="ml-2 h-4 w-4" />
+                  {isSubmitting ? "Sending..." : "Send Message"} <Send className="ml-2 h-4 w-4" />
                 </MagneticButton>
+
+                {/* Status Messages */}
+                {submitStatus === "success" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 p-3 bg-green-900/30 border border-green-700 rounded-md text-green-400"
+                  >
+                    <CheckCircle className="h-5 w-5" />
+                    <span>Message sent successfully! I'll get back to you soon.</span>
+                  </motion.div>
+                )}
+
+                {submitStatus === "error" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 p-3 bg-red-900/30 border border-red-700 rounded-md text-red-400"
+                  >
+                    <AlertCircle className="h-5 w-5" />
+                    <span>Failed to send message. Please try again or contact me directly.</span>
+                  </motion.div>
+                )}
               </form>
             </motion.div>
           </div>

@@ -49,7 +49,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Button className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600 text-white">
-            Let's Work Together
+            <a href="#contact">Let's Work Together</a>
           </Button>
         </div>
 
@@ -74,7 +74,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Button className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600 text-white w-full mt-2">
-              Let's Work Together
+              <a href="#contact">Let's Work Together</a>
             </Button>
           </div>
         </div>

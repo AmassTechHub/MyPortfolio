@@ -105,7 +105,7 @@ export default function InteractiveTimeline() {
                 <button
                   onClick={() => setSelectedEvent(event)}
                   className={cn(
-                    "mt-4 text-sm flex items-center gap-1",
+                    "text-sm font-medium transition-colors",
                     event.category === "tech"
                       ? "text-blue-400 hover:text-blue-300"
                       : event.category === "media"
@@ -113,7 +113,9 @@ export default function InteractiveTimeline() {
                         : "text-gray-400 hover:text-white",
                   )}
                 >
-                  Learn more
+                  <a href="https://www.amasstechhub.com" target="_blank" rel="noopener noreferrer">
+                    Learn more
+                  </a>
                 </button>
               </motion.div>
             </div>

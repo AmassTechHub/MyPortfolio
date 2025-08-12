@@ -148,6 +148,28 @@ export default function About() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Action Buttons */}
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <a
+                  href="#contact"
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-6 py-3 rounded-lg text-center font-medium transition-all hover:scale-105"
+                >
+                  Start a Tech Project
+                </a>
+                <a
+                  href="#contact"
+                  className="flex-1 bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-700 hover:to-orange-900 text-white px-6 py-3 rounded-lg text-center font-medium transition-all hover:scale-105"
+                >
+                  Book a Shoot
+                </a>
+              </motion.div>
             </div>
           </div>
 

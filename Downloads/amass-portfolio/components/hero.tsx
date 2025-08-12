@@ -79,11 +79,31 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <MagneticButton className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-6 py-6 text-lg rounded-md">
-                Let's Work Together <ArrowRight className="ml-2 inline" size={18} />
+                <a href="#contact" className="flex items-center">
+                  Let's Work Together <ArrowRight className="ml-2 inline" size={18} />
+                </a>
               </MagneticButton>
               <MagneticButton className="border border-gray-700 text-white hover:bg-gray-800 px-6 py-6 text-lg rounded-md">
                 <a href="/THEOPHILUS-AMANKWAH-CV.pdf" download className="flex items-center">
                   Download CV <Download className="ml-2 inline" size={18} />
+                </a>
+              </MagneticButton>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center mt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <MagneticButton className="bg-gradient-to-r from-green-600 to-green-800 hover:from-green-700 hover:to-green-900 text-white px-6 py-4 text-base rounded-md">
+                <a href="#contact" className="flex items-center">
+                  Start a Tech Project <Code className="ml-2 inline" size={16} />
+                </a>
+              </MagneticButton>
+              <MagneticButton className="bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-700 hover:to-orange-900 text-white px-6 py-4 text-base rounded-md">
+                <a href="#contact" className="flex items-center">
+                  Book a Shoot <Film className="ml-2 inline" size={16} />
                 </a>
               </MagneticButton>
             </motion.div>
