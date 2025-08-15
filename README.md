@@ -269,7 +269,7 @@ Tailwind CSS classes for styling
 Custom CSS in styles/globals.css
 Component-specific styling with Tailwind
 🔗 Links
-Portfolio: Live Demo
+Portfolio: https://amasstech.vercel.app
 Personal Website: www.amasstechhub.com
 GitHub: @Am-amass
 YouTube: @AmassTechHub
